@@ -17,8 +17,11 @@ class CreateProprieteArticlesTable extends Migration
             $table->id();
             $table->string('nom');
             $table->boolean('estObligatoire')->default(1);
+            $table->foreignId('type_articles_id');
+
 
         });
+        Schema::enableForeignKeyConstraints();
     }
 
     /**
@@ -27,7 +30,9 @@ class CreateProprieteArticlesTable extends Migration
      * @return void
      */
     public function down()
-    {
+    {   Schema::table('propriete_articles', function (Blueprint $table) {
+        $table->dropForeign(["type_articles_id"]);
+    });
         Schema::dropIfExists('propriete_articles');
     }
 }
