@@ -34,4 +34,5 @@ class CreateArticlesLocationsTable extends Migration
     });
         Schema::dropIfExists('articles_locations');
     }
+    
 }
