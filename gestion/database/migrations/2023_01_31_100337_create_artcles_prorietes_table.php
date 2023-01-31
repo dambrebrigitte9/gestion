@@ -15,8 +15,11 @@ class CreateArtclesProrietesTable extends Migration
     {
         Schema::create('artcles_prorietes', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('articles_id');
+            $table->foreignId('locations_id');
             $table->timestamps();
         });
+        Schema::enableForeignKeyConstraints();
     }
 
     /**
@@ -25,7 +28,9 @@ class CreateArtclesProrietesTable extends Migration
      * @return void
      */
     public function down()
-    {
+    {   Schema::table('artcles_prorietes', function (Blueprint $table) {
+        $table->dropForeign(["'articles_id", "locations_id"]);
+    });
         Schema::dropIfExists('artcles_prorietes');
     }
 }
