@@ -17,7 +17,7 @@ class CreateProprieteArticlesTable extends Migration
             $table->id();
             $table->string('nom');
             $table->boolean('estObligatoire')->default(1);
-            $table->foreignId('type_articles_id');
+            $table->foreignId('type_articles_id')->constrained();
 
 
         });

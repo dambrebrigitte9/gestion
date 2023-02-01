@@ -17,8 +17,8 @@ class CreatePaiementsTable extends Migration
             $table->id();
             $table->string('montantPaye');
             $table->dateTime('datePaiement');
-            $table->foreignId('users_id');
-            $table->foreignId('locations_id');
+            $table->foreignId('users_id')->constrained();
+            $table->foreignId('locations_id')->constrained();
 
         });
         Schema::enableForeignKeyConstraints();

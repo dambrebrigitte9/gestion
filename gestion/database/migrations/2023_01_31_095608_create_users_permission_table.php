@@ -15,8 +15,8 @@ class CreateUsersPermissionTable extends Migration
     {
         Schema::create('users_permission', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('users_id');
-            $table->foreignId('permissions_id');
+            $table->foreignId('users_id')->constrained();
+            $table->foreignId('permissions_id')->constrained();
             $table->timestamps();
         });
         Schema::enableForeignKeyConstraints();

@@ -17,9 +17,9 @@ class CreateLocationsTable extends Migration
             $table->id();
             $table->dateTime('dateDebut');
             $table->dateTime('dateFin');
-            $table->foreignId('statut_locations_id');
-            $table->foreignId('users_id');
-            $table->foreignId('clients_id');
+            $table->foreignId('statut_locations_id')->constrained();
+            $table->foreignId('users_id')->constrained();
+            $table->foreignId('clients_id')->constrained();
 
 
         });
