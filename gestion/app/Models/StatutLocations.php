@@ -1,19 +1,15 @@
 <?php
-namespace App\Models;
 
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-
-
-class Articles extends Model
+class StatutLocations extends Model
 {
     use HasFactory;
     public function type()
     {
         return $this->belongsTo(TypeArticles::class, 'type_articles_id');
     }
-
-
 }
