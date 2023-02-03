@@ -20,4 +20,14 @@ class Locations extends Model
     {
         return $this->belongsTo(StatutLocations::class, 'statut_locations_id');
     }
+
+    public function paiement()
+    {
+        return $this->hasMany(Paiements::class, 'paiements_id');
+    }
+
+    public function articles()
+    {
+        return $this->belongsToMany(Articles::class, 'articles_locations',  'locations_id' , 'articles_id');
+    }
 }

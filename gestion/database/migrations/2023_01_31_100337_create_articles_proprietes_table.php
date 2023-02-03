@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateArtclesProrietesTable extends Migration
+class CreateArticlesProprietesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateArtclesProrietesTable extends Migration
      */
     public function up()
     {
-        Schema::create('artcles_prorietes', function (Blueprint $table) {
+        Schema::create('articles_proprietes', function (Blueprint $table) {
             $table->id();
             $table->foreignId('articles_id')->constrained();
             $table->foreignId('propriete_articles_id')->constrained();
@@ -28,9 +28,9 @@ class CreateArtclesProrietesTable extends Migration
      * @return void
      */
     public function down()
-    {   Schema::table('artcles_prorietes', function (Blueprint $table) {
+    {   Schema::table('articles_proprietes', function (Blueprint $table) {
         $table->dropForeign(["'articles_id", "propriete_articles_id"]);
     });
-        Schema::dropIfExists('artcles_prorietes');
+        Schema::dropIfExists('articles_proprietes');
     }
 }
