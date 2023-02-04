@@ -24,6 +24,7 @@
 
 @extends('layouts/master')
 @section('contenu')
-<livewire:counter /> 
+
+{{-- <livewire:counter />  --}}
 
 @endsection

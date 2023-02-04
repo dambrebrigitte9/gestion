@@ -27,7 +27,7 @@
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
 
-       <x-tomate/>
+        <x-tomate />
 
 
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
@@ -46,24 +46,38 @@
 
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">Alexander Pierce</a>
+                        <a href="#" class="d-block">{{auth()->user()->nom}} {{auth()->user()->prenom}}</a>
                     </div>
                 </div>
 
 
 
-                <x-menu/>
+                <x-menu />
             </div>
 
         </aside>
 
         <div class="content-wrapper">
 
-            <div class="content-header">
-                <div class="container-fluid">
+           
 
+            <div class="row">
+                <div class="col-12 p-4">
+                    <div class="jumbotron ">
+                        <h1 class="display-3">Bienvenu, {{auth()->user()->nom}} {{auth()->user()->prenom}} <strong></strong></h1>
+                        {{-- @foreach(auth()->user()->roles as $role) --}}
+                        {{-- <p>{{$role->nom}}</p> --}}
+                        {{-- @endforeach --}}
+                        <p class="lead">Il s’agit d’une unité de héros simple, un composant simple de style jumbotron pour attirer l’attention sur le contenu ou les informations en vedette.</p>
+                        <hr class="my-4">
+                        <p>Il utilise des classes utilitaires pour la typographie et l’espacement afin d’espacer le contenu dans le conteneur plus grand.</p>
+                        <p class="lead">
+                            <a class="btn btn-primary btn-lg" href="#" role="button">Apprenez PLus</a>
+                        </p>
+                    </div>
                 </div>
             </div>
+
 
 
 
@@ -71,17 +85,16 @@
         </div>
 
 
-       <x-sidbar/>
+        <x-sidbar />
 
 
         <footer class="main-footer">
 
             <div class="float-right d-none d-sm-inline">
-                Anything you want
+               Tout ce que vous voulez savoir
             </div>
 
-            <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights
-            reserved.
+            <strong>Copyright &copy; 2023<a href="https://adminlte.io">BD.Brigitte</a>.</strong> Tout droit reserve
         </footer>
     </div>
 
